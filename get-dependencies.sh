@@ -43,10 +43,3 @@ cp -r "$APP"/lib/. ./AppDir/lib/
 ln -s ../lib ./AppDir/bin/lib
 
 cp "$APP"/lib/ABDownloadManager.png ./AppDir/ABDownloadManager.png
-
-# reuse the desktop entry upstream's installer writes
-sed -n '/^\[Desktop Entry\]$/,/^EOF$/p' ./ab-download-manager/scripts/install.sh \
-	| sed -e '$d' \
-	      -e 's|^Exec=.*|Exec=ABDownloadManager|' \
-	      -e 's|^Icon=.*|Icon=ABDownloadManager|' \
-	> ./AppDir/ABDownloadManager.desktop
