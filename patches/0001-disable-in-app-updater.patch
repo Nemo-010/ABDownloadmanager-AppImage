@@ -9,7 +9,7 @@ index 9641659f..745127aa 100644
 -        val installationFolder = installationFolder ?: return false
 -        return File(installationFolder).canWrite()
 +        // Never let the application download a release archive and replace its
-+        // own installation. The AppImage wrapper handles updates instead.
++        // own installation. self-updater.hook handles updates instead.
 +        return false
      }
  

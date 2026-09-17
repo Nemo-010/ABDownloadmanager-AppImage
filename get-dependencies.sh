@@ -25,7 +25,7 @@ git clone https://github.com/amir1376/ab-download-manager ./ab-download-manager 
 	TAG=$(git tag --sort=-v:refname | grep -vi 'rc\|preview\|alpha\|beta' | head -1)
 	git checkout "$TAG"
 
-	# no self-updating, the AppImage wrapper handles updates
+	# no self-updating, self-updater.hook handles updates
 	git apply ../patches/*.patch
 
 	# desktop app-image only
