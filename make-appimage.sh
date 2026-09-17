@@ -14,6 +14,7 @@ quick-sharun ./AppDir/bin/*
 
 # drop the mirror of the AppDir that tracing makes under lib/
 rm -rf "./AppDir/lib$PWD/AppDir"
+./AppDir/sharun -g
 
 # Turn AppDir into AppImage
 quick-sharun --make-appimage
